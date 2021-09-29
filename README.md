@@ -4,7 +4,7 @@
 Create client and server certificates signed by a CA that can be used to authenticate user requests to an OpenBMC server. 
 The guide uses [OpenSSL](https://www.openssl.org/) toolkit to generate CSR requests and certificates that will be used for authentication.
 
-## [Certificate generation procedure] (#TLS-server-certificates-for-OpenBMC/certificate_generate.md)
+## [Certificate generation procedure](#TLS-server-certificates-for-OpenBMC/certificate_generate.md)
 1) Create a copy and modify the default openssl configuration file.
 
 2) Create two additional configuration files for the client and server certificates respectively. Without these files no extensions are added to the certificate.
