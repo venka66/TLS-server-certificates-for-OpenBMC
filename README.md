@@ -6,9 +6,9 @@ The guide uses [OpenSSL](https://www.openssl.org/) toolkit to generate CSR reque
 
 ## Steps needed to create the files
 
-- 1) Create a copy and modify the default openssl configuration file.
+1) Create a copy and modify the default openssl configuration file.
 
-- 2) Create two additional configuration files for the client and server certificates respectively. Without these files no extensions are added to the certificate.
+2) Create two additional configuration files for the client and server certificates respectively. Without these files no extensions are added to the certificate.
 
 3) Create your own SSL certificate authority (CA)
 
