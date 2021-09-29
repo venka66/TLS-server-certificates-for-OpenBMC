@@ -1,6 +1,6 @@
-## Certificates
+# Generate Certificates
 
-### Pre-requisities to ensure the certificates generated are valid 
+## Pre-requisities to ensure the certificates generated are valid 
 For a certificate to be marked as valid, following conditions need to be met.
 
 * `KeyUsage` contains required purpose `digitalSignature` and `keyAgreement`
@@ -16,7 +16,7 @@ certificate and `serverAuth` for server certificate (see rfc 3280 4.2.1.13)
 * issuer name has to match the fully qualified domain name of your OpenBMC
 host
 
-### Prepare configuration files
+## Prepare configuration files
 
 To generate certificates with required parameters some modification must be
 made to the default openssl configuration file.
@@ -93,7 +93,7 @@ authorityKeyIdentifier = keyid
 END
 ```
 
-### Create a new CA certificate
+## Create a new CA certificate
 First we need to create a private key to sign the CA certificate.
 ```
 openssl genrsa -out CA-key.pem 2048
@@ -107,7 +107,7 @@ certificate, such as Country, City, Company Name, etc.
 openssl req -new -config openssl-client.cnf -key CA-key.pem -x509 -days 1000 -out CA-cert.pem
 ```
 
-### Create client certificate signed by given CA certificate
+## Create client certificate signed by given CA certificate
 To create a client certificate, a signing request must be created first. For
 this another private key will be needed.
 
@@ -132,7 +132,7 @@ openssl x509 -req -extensions my_ext_section -extfile myext-client.cnf -days 365
 ```
 The file `client-cert.pem` now contains a signed client certificate.
 
-### Create server certificate signed by given CA certificate
+## Create server certificate signed by given CA certificate
 For convenience we will use the same CA generated in paragraph [Create a new
 CA certificate](#Create-a-new-CA-certificate), although a different one could
 be used.
@@ -161,7 +161,7 @@ openssl x509 -req -extensions my_ext_section -extfile myext-server.cnf -days 365
 ```
 The file `server-cert.pem` now contains a signed client certificate.
 
-### Verify certificates
+## Verify certificates
 To verify the signing request and both certificates you can use following
 commands.
 
