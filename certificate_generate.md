@@ -192,35 +192,36 @@ Below are fragments of generated certificates that you can compare with.
 CA-cert.pem
     Data:
         Version: 3 (0x2)
-        Serial Number: 16242916899984461675 (0xe16a6edca3c34f6b)
-    Signature Algorithm: sha256WithRSAEncryption
-        Issuer: C=US, ST=California, L=San Francisco, O=Intel, CN=Test CA
+        Serial Number:
+            44:77:bf:0e:3f:0f:6e:43:41:30:8d:91:1d:05:a1:82:52:f4:64:ed
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: ST = TPE, L = Taipei, O = Phoenix Technologies, OU = ServerBMC, CN = venkapxe
         Validity
-            Not Before: May 11 11:40:48 2020 GMT
-            Not After : Feb  5 11:40:48 2023 GMT
-        Subject: C=US, ST=California, L=San Francisco, O=Intel, CN=Test CA
+            Not Before: Sep 29 03:40:31 2021 GMT
+            Not After : Jun 25 03:40:31 2024 GMT
+        Subject: ST = TPE, L = Taipei, O = Phoenix Technologies, OU = ServerBMC, CN = venkapxe
         Subject Public Key Info:
             Public Key Algorithm: rsaEncryption
-                Public-Key: (2048 bit)
+                RSA Public-Key: (2048 bit)
                 Modulus:
-                    00:d4:24:c1:1d:ac:85:8c:5b:42:e4:f8:a8:d8:7c:
+                    00:9f:98:d7:ba:8a:d3:5b:18:cb:62:eb:c4:80:c2:
                     ...
-                    55:83:8b:aa:ac:ac:6e:e3:01:2b:ce:f7:ee:87:21:
-                    f9:2b
+                    20:69:1a:e3:f2:e9:71:71:3c:3e:1c:a8:bb:93:4f:
+                    8b:dd
                 Exponent: 65537 (0x10001)
         X509v3 extensions:
-            X509v3 Subject Key Identifier:
-                ED:FF:80:A7:F8:DA:99:7F:94:35:95:F0:92:74:1A:55:CD:DF:BA:FE
-            X509v3 Authority Key Identifier:
-                keyid:ED:FF:80:A7:F8:DA:99:7F:94:35:95:F0:92:74:1A:55:CD:DF:BA:FE
+            X509v3 Subject Key Identifier: 
+                F5:71:F3:03:79:A2:56:7A:EE:5E:3D:EC:8A:7B:BA:B9:71:5D:D6:34
+            X509v3 Authority Key Identifier: 
+                keyid:F5:71:F3:03:79:A2:56:7A:EE:5E:3D:EC:8A:7B:BA:B9:71:5D:D6:34
 
-            X509v3 Basic Constraints:
+            X509v3 Basic Constraints: critical
                 CA:TRUE
     Signature Algorithm: sha256WithRSAEncryption
-         cc:8b:61:6a:55:60:2b:26:55:9f:a6:0c:42:b0:47:d4:ec:e0:
+         40:43:7f:a3:47:65:b4:7e:c1:30:4b:65:7d:e2:03:8d:0b:8b:
          ...
-         45:47:91:62:10:bd:3e:a8:da:98:33:65:cc:11:23:95:06:1b:
-         ee:d3:78:84
+         e9:86:22:4e:dc:61:ad:fc:27:49:1f:76:47:af:b8:cc:73:08:
+         e6:ee:e0:bd
 ```
 ```
 client-cert.pem
