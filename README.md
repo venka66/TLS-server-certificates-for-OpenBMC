@@ -7,15 +7,11 @@ The guide uses [OpenSSL](https://www.openssl.org/) toolkit to generate CSR reque
 ## Certificate generation procedure
 Listed below in brief are the steps that need to be done to generate the certificates for TLS on OpenBMC.
 For comprehensive information and commands usage, refer [certificate_generate.md](#TLS-server-certificates-for-OpenBMC/certificate_generate.md)
-1) [Create a copy and modify the default openssl configuration file.](https://github.com/venka66/TLS-server-certificates-for-OpenBMC/blob/main/certificate_generate.md#pre-requisities-to-ensure-the-certificates-generated-are-valid)
-
-2) [Create your own SSL certificate authority (CA)]
-
-3) [Create a client certificate signed by the CA.] The client certificates will be used to authenticate to the OpenBMC without the need of a passsword.
-
-4) [Create a server certificate signed by the CA.]
-
-5) [Verify CA, client and server certificates generated are all valid.]
+1) [Create a copy and modify the default openssl configuration file.](https://github.com/venka66/TLS-server-certificates-for-OpenBMC/blob/main/certificate_generate.md#prepare-configuration-files)
+2) [Create your own SSL certificate authority (CA)](https://github.com/venka66/TLS-server-certificates-for-OpenBMC/blob/main/certificate_generate.md#create-a-new-ca-certificate)
+3) [Create a client certificate signed by the CA.](https://github.com/venka66/TLS-server-certificates-for-OpenBMC/blob/main/certificate_generate.md#create-client-certificate-signed-by-given-ca-certificate) The client certificates will be used to authenticate to the OpenBMC without the need of a passsword.
+4) [Create a server certificate signed by the CA.](https://github.com/venka66/TLS-server-certificates-for-OpenBMC/blob/main/certificate_generate.md#create-server-certificate-signed-by-given-ca-certificate)
+5) [Verify CA, client and server certificates generated are all valid.](https://github.com/venka66/TLS-server-certificates-for-OpenBMC/blob/main/certificate_generate.md#verify-certificates)
 
 ## Install CA and Server Certificates on OpenBMC
 Install CA certificate on OpenBMC via any one of the below interfaces
