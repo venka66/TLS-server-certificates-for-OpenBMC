@@ -4,28 +4,25 @@
 Create client and server certificates signed by a CA that can be used to authenticate user requests to an OpenBMC server. 
 The guide uses [OpenSSL](https://www.openssl.org/) toolkit to generate CSR requests and certificates that will be used for authentication.
 
-## [Certificate generation procedure](#TLS-server-certificates-for-OpenBMC/certificate_generate.md)
+## Certificate generation procedure
+Listed below in brief are the steps that need to be done to generate the certificates for TLS on OpenBMC.
+For comprehensive information and commands usage, refer [certificate_generate.md](#TLS-server-certificates-for-OpenBMC/certificate_generate.md)
 1) Create a copy and modify the default openssl configuration file.
-
 2) Create two additional configuration files for the client and server certificates respectively. Without these files no extensions are added to the certificate.
-
 3) Create your own SSL certificate authority (CA)
-
 4) Create a client certificate signed by the CA. The client certificates will be used to authenticate to the OpenBMC without the need of a passsword.
-
 5) Create a server certificate signed by the CA.
-
 6) Verify CA, client and server certificates generated are all valid.
 
-7) Install CA certificate on OpenBMC via any one of the below interfaces
-	a) Redfish
-	b) BMC web
+## Install CA and Server Certificates on OpenBMC
+Install CA certificate on OpenBMC via any one of the below interfaces
+ 1) Redfish
+ 2) BMC web
 
-8) Ensure TLS authentication is enabled in the BMC.
+## Enable TLS authentication for OpenBMC
+Ensure TLS authentication is enabled in the BMC.
 
-9) Access OpenBMC resources using TLS authentication method.
-
-## Using TLS to access OpenBMC resources
+## Access OpenBMC resources using TLS authentication
 If TLS is enabled, valid CA certificate was uploaded and the server
 certificate was replaced it should be possible to execute curl requests
 using only client certificate, key, and CA like below.
