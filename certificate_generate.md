@@ -222,72 +222,77 @@ CA-cert.pem
          ...
          e9:86:22:4e:dc:61:ad:fc:27:49:1f:76:47:af:b8:cc:73:08:
          e6:ee:e0:bd
+         
 ```
 ```
 client-cert.pem
-    Data:
+Data:
         Version: 3 (0x2)
-        Serial Number: 10150871893861973895 (0x8cdf2434b223bf87)
-    Signature Algorithm: sha256WithRSAEncryption
-        Issuer: C=US, ST=California, L=San Francisco, O=Intel, CN=Test CA
+        Serial Number:
+            75:69:98:f0:ce:7e:f9:5e:e2:5c:a0:f0:85:92:10:dc:4c:6d:b7:b3
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: ST = TPE, L = Taipei, O = Phoenix Technologies, OU = ServerBMC, CN = venkapxe
         Validity
-            Not Before: May 11 11:42:58 2020 GMT
-            Not After : May 11 11:42:58 2021 GMT
-        Subject: C=US, ST=California, L=San Francisco, O=Intel, CN=root
+            Not Before: Sep 29 03:40:36 2021 GMT
+            Not After : Sep 29 03:40:36 2022 GMT
+        Subject: ST = TPE, L = Taipei, O = Phoenix Technologies, OU = ServerBMC, CN = root
         Subject Public Key Info:
             Public Key Algorithm: rsaEncryption
-                Public-Key: (2048 bit)
+                RSA Public-Key: (2048 bit)
                 Modulus:
-                    00:cf:d6:d0:a2:09:62:df:e9:a9:b1:e1:3d:7f:2f:
+                    00:d9:b6:57:79:a5:2d:b0:d9:46:df:31:37:39:7e:
                     ...
-                    30:7b:48:dc:c5:2c:3f:a9:c0:d1:b6:04:d4:1a:c8:
-                    8a:51
+                    9e:23:22:ac:28:a6:77:6a:92:ca:6a:f0:ab:7e:ea:
+                    52:f5
                 Exponent: 65537 (0x10001)
         X509v3 extensions:
-            X509v3 Key Usage:
+            X509v3 Key Usage: 
                 Digital Signature, Key Agreement
-            X509v3 Extended Key Usage:
+            X509v3 Extended Key Usage: 
                 TLS Web Client Authentication
-            X509v3 Authority Key Identifier:
-                keyid:ED:FF:80:A7:F8:DA:99:7F:94:35:95:F0:92:74:1A:55:CD:DF:BA:FE
+            X509v3 Authority Key Identifier: 
+                keyid:F5:71:F3:03:79:A2:56:7A:EE:5E:3D:EC:8A:7B:BA:B9:71:5D:D6:34
 
     Signature Algorithm: sha256WithRSAEncryption
-         7f:a4:57:f5:97:48:2a:c4:8e:d3:ef:d8:a1:c9:65:1b:20:fd:
+         08:25:de:00:d1:4b:15:9b:3d:3d:f1:c5:d2:46:55:99:8d:e6:
          ...
-         25:cb:5e:0a:37:fb:a1:ab:b0:c4:62:fe:51:d3:1c:1b:fb:11:
-         56:57:4c:6a
+         86:84:c3:1e:eb:9b:f6:d6:4c:52:dc:ca:d9:2b:98:74:29:71:
+         9a:8e:b3:9b
+
 ```
 ```
 server-cert.pem
-    Data:
+  Data:
         Version: 3 (0x2)
-        Serial Number: 10622848005881387807 (0x936beffaa586db1f)
-    Signature Algorithm: sha256WithRSAEncryption
-        Issuer: C=US, ST=z, L=z, O=z, OU=z, CN=bmc.example.com
+        Serial Number:
+            75:69:98:f0:ce:7e:f9:5e:e2:5c:a0:f0:85:92:10:dc:4c:6d:b7:b6
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: ST = TPE, L = Taipei, O = Phoenix Technologies, OU = ServerBMC, CN = venkapxe
         Validity
-            Not Before: May 22 13:46:02 2020 GMT
-            Not After : May 22 13:46:02 2021 GMT
-        Subject: C=US, ST=z, L=z, O=z, OU=z, CN=bmc.example.com
+            Not Before: Sep 29 05:21:58 2021 GMT
+            Not After : Sep 29 05:21:58 2022 GMT
+        Subject: ST = TPE, L = Taipei, O = Phoenix Technologies, OU = ServerBMC, CN = 10.122.168.233
         Subject Public Key Info:
             Public Key Algorithm: rsaEncryption
-                Public-Key: (2048 bit)
+                RSA Public-Key: (2048 bit)
                 Modulus:
-                    00:d9:34:9c:da:83:c6:eb:af:8f:e8:11:56:2a:59:
+                    00:ab:cd:8f:ab:dc:68:c3:c8:23:f5:ae:fb:99:11:
                     ...
-                    92:60:09:fc:f9:66:82:d0:27:03:44:2f:9d:6d:c0:
-                    a5:6d
+                    a2:fc:3f:98:50:7b:d1:4d:e0:23:ca:28:80:e5:a1:
+                    ec:4f
                 Exponent: 65537 (0x10001)
         X509v3 extensions:
-            X509v3 Key Usage:
+            X509v3 Key Usage: 
                 Digital Signature, Key Agreement
-            X509v3 Extended Key Usage:
+            X509v3 Extended Key Usage: 
                 TLS Web Server Authentication
-            X509v3 Authority Key Identifier:
-                keyid:5B:1D:0E:76:CC:54:B8:BF:AE:46:10:43:6F:79:0B:CA:14:5C:E0:90
+            X509v3 Authority Key Identifier: 
+                keyid:F5:71:F3:03:79:A2:56:7A:EE:5E:3D:EC:8A:7B:BA:B9:71:5D:D6:34
 
     Signature Algorithm: sha256WithRSAEncryption
-         bf:41:e2:2f:87:44:25:d8:54:9c:4e:dc:cc:b3:f9:af:5a:a3:
+         2c:13:5c:b5:38:ed:89:71:02:ba:c0:b8:26:1b:ad:bf:47:53:
          ...
-         ef:0f:90:a6
+         9d:a8:b6:52:25:3b:91:17:ce:ca:2c:f6:c0:6a:ce:15:70:2d:
+         da:f3:77:d2
 
 ```
