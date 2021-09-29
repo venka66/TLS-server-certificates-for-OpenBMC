@@ -1,10 +1,8 @@
 # TLS Server certificates for OpenBMC
 
 ## Introduction
-With help of this guidebook you should be able to create both client and
-server certificates signed by a CA that can be used to authenticate user
-requests to an OpenBMC server. You will also learn how to enable and test
-the OpenBMC TLS authentication.
+Procedure to create both client and server certificates signed by a CA that can be used to authenticate user requests to an OpenBMC server. 
+The guide uses [OpenSSL](https://www.openssl.org/) toolkit to generate CSR requests and certificates that will be used for authentication.
 
 ## Ensuring a certificate is valid
 For a certificate to be marked as valid, the following conditions have to be met:
