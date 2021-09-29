@@ -1,28 +1,29 @@
 # TLS Server certificates for OpenBMC
 
 ## Introduction
-Procedure to create both client and server certificates signed by a CA that can be used to authenticate user requests to an OpenBMC server. 
+Create client and server certificates signed by a CA that can be used to authenticate user requests to an OpenBMC server. 
 The guide uses [OpenSSL](https://www.openssl.org/) toolkit to generate CSR requests and certificates that will be used for authentication.
 
-## Ensuring a certificate is valid
-For a certificate to be marked as valid, the following conditions have to be met:
+## Steps needed to create the files
+    1) Create a copy and modify the default openssl configuration file.
 
-* `KeyUsage` contains required purpose `digitalSignature` and `keyAgreement`
-(see rfc 3280 4.2.1.3)
-* `ExtendedKeyUsage` contains required purpose `clientAuth` for client
-certificate and `serverAuth` for server certificate (see rfc 3280 4.2.1.13)
-* public key meets minimal bit length requirement
-* certificate has to be in its validity period
-* `notBefore` and `notAfter` fields have to contain valid time
-* has to be properly signed by certificate authority
-* certificate is well-formed according to X.509
-* issuer name has to match CA's subject name for client certificate
-* issuer name has to match the fully qualified domain name of your OpenBMC
-host
+    2) Create two additional configuration files for the client and server certificates respectively. Without these files no extensions are added to the certificate.
 
-If you already have certificates you can skip to [Enable TLS authentication
-](#Enable-TLS-authentication) or go to [Verify certificates](#Verify-certificates)
-and check if they meet the above requirements.
+    3) Create your own SSL certificate authority (CA)
+
+    4) Create a client certificate signed by the CA. The client certificates will be used to authenticate to the OpenBMC without the need of a passsword.
+
+    5) Create a server certificate signed by the CA.
+
+    6) Verify CA, client and server certificates generated are all valid.
+
+    7) Install CA certificate on OpenBMC via any one of the below interfaces
+      a) Redfish
+      b) BMC web
+
+    8) Ensure TLS authentication is enabled in the BMC.
+
+    9) Access OpenBMC resources using TLS authentication method.
 
 ## Using TLS to access OpenBMC resources
 
