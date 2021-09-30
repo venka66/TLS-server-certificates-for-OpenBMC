@@ -1,4 +1,7 @@
-## Installing CA certificate on OpenBMC
+# Certificate install/replacement on OpenBMC
+
+## Redfish
+### Installing CA certificate on OpenBMC via Redfish
 
 The CA certificate can be installed via Redfish Service. The file `CA-cert.pem`
 can not be uploaded directly but must be sent embedded in a valid JSON
@@ -38,7 +41,7 @@ collection.
 curl --user root:0penBmc -k https://${bmc}/redfish/v1/Managers/bmc/Truststore/Certificates
 
 ```
-
+### Replacing HTTPs certificate on OpenBMC via Redfish
 An auto-generated self-signed server certificate is already present on
 OpenBMC by default. To use the certificate signed by our CA it must be
 replaced. Additionally we must upload to OpenBMC the private key that was
@@ -65,29 +68,3 @@ To replace the server certificate on the OpenBMC server post the content of
 curl --user root:0penBmc -d @replace_cert.json -k -X POST https://${bmc}/redfish/v1/CertificateService/Actions/CertificateService.ReplaceCertificate/
 
 ```
-
-## Enable TLS authentication
-
-To check current state of the TLS authentication method use this command:
-
-```
-curl --user root:0penBmc -k https://${bmc}/redfish/v1/AccountService
-```
-and verify that the attribute `Oem->OpenBMC->AuthMethods->TLS` is set to true.
-
-To enable TLS authentication use this command:
-
-```
-curl --user root:0penBmc  -k -X PATCH -H "ContentType:application/json" --data '{"Oem": {"OpenBMC": {"AuthMethods": { "TLS": true} } } }' https://${bmc}/redfish/v1/AccountService
-```
-
-To disable TLS authentication use this command:
-
-```
-curl --user root:0penBmc  -k -X PATCH -H "ContentType:application/json" --data '{"Oem": {"OpenBMC": {"AuthMethods": { "TLS": false} } } }' https://${bmc}/redfish/v1/AccountService
-```
-
-Other authentication methods like basic authentication can be enabled or
-disabled as well using the same mechanism. All supported authentication
-methods are available under attribute `Oem->OpenBMC->AuthMethods` of the
-`/redfish/v1/AccountService` resource.
