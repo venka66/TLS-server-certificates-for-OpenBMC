@@ -82,10 +82,30 @@ curl --user root:password -d @replace_cert.json -k -X POST https://${bmc}/redfis
 
 ```
 
-
-
 ## Enable TLS authentication for OpenBMC
-Ensure TLS authentication is enabled in the BMC.
+To check current state of the TLS authentication method use this command:
+
+```
+curl --user root:0penBmc -k https://${bmc}/redfish/v1/AccountService
+```
+and verify that the attribute `Oem->OpenBMC->AuthMethods->TLS` is set to true.
+
+To enable TLS authentication use this command:
+
+```
+curl --user root:0penBmc  -k -X PATCH -H "ContentType:application/json" --data '{"Oem": {"OpenBMC": {"AuthMethods": { "TLS": true} } } }' https://${bmc}/redfish/v1/AccountService
+```
+
+To disable TLS authentication use this command:
+
+```
+curl --user root:0penBmc  -k -X PATCH -H "ContentType:application/json" --data '{"Oem": {"OpenBMC": {"AuthMethods": { "TLS": false} } } }' https://${bmc}/redfish/v1/AccountService
+```
+
+Other authentication methods like basic authentication can be enabled or
+disabled as well using the same mechanism. All supported authentication
+methods are available under attribute `Oem->OpenBMC->AuthMethods` of the
+`/redfish/v1/AccountService` resource.
 
 ## Access OpenBMC resources using TLS authentication
 If TLS is enabled, valid CA certificate was uploaded and the server
