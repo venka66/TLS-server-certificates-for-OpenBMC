@@ -1,6 +1,6 @@
 # Certificate install/replacement on OpenBMC
 
-## Redfish
+## Redfish Interface
 ### Installing CA certificate on OpenBMC via Redfish
 
 The CA certificate can be installed via Redfish Service. The file `CA-cert.pem`
@@ -26,11 +26,11 @@ Where `${bmc}` should be `bmc.example.com`. It is convenient to export it
 as an environment variable.
 
 ```
-curl --user root:0penBmc -d @install_ca.json -k -X POST https://${bmc}/redfish/v1/Managers/bmc/Truststore/Certificates
+curl --user root:password -d @install_ca.json -k -X POST https://${bmc}/redfish/v1/Managers/bmc/Truststore/Certificates
 
 ```
 
-Credentials `root:0penBmc` can be replaced with any system user name and
+Credentials `root:password` can be replaced with any system user name and
 password of your choice but with proper access rights to resources used here.
 
 
@@ -38,7 +38,7 @@ After successful certificate installation you should get positive HTTP
 response and a new certificate should be available under this resource
 collection.
 ```
-curl --user root:0penBmc -k https://${bmc}/redfish/v1/Managers/bmc/Truststore/Certificates
+curl --user root:password -k https://${bmc}/redfish/v1/Managers/bmc/Truststore/Certificates
 
 ```
 ### Replacing HTTPs certificate on OpenBMC via Redfish
@@ -65,6 +65,10 @@ To replace the server certificate on the OpenBMC server post the content of
 `replace_cert.json` with this command:
 
 ```
-curl --user root:0penBmc -d @replace_cert.json -k -X POST https://${bmc}/redfish/v1/CertificateService/Actions/CertificateService.ReplaceCertificate/
+curl --user root:password -d @replace_cert.json -k -X POST https://${bmc}/redfish/v1/CertificateService/Actions/CertificateService.ReplaceCertificate/
 
 ```
+
+## BMC Web Interface
+### Installing CA certificate on OpenBMC via BMC web
+
