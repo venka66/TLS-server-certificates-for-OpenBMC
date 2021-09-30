@@ -1,6 +1,5 @@
 # Certificate install/replacement on OpenBMC
 
-## Redfish Interface
 ### Installing CA certificate on OpenBMC via Redfish
 
 The CA certificate can be installed via Redfish Service. The file `CA-cert.pem`
@@ -68,7 +67,4 @@ To replace the server certificate on the OpenBMC server post the content of
 curl --user root:password -d @replace_cert.json -k -X POST https://${bmc}/redfish/v1/CertificateService/Actions/CertificateService.ReplaceCertificate/
 
 ```
-
-## BMC Web Interface
-### Installing CA certificate on OpenBMC via BMC web
 
