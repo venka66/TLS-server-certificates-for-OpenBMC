@@ -11,7 +11,7 @@ For comprehensive information and commands usage, refer [certificate_generate.md
 2) [Create your own SSL certificate authority (CA)](https://github.com/venka66/TLS-server-certificates-for-OpenBMC/blob/main/certificate_generate.md#create-a-new-ca-certificate)
 3) [Create a client certificate signed by the CA.](https://github.com/venka66/TLS-server-certificates-for-OpenBMC/blob/main/certificate_generate.md#create-client-certificate-signed-by-given-ca-certificate) The client certificates will be used to authenticate to the OpenBMC without the need of a passsword.
 4) [Create a server certificate signed by the CA.](https://github.com/venka66/TLS-server-certificates-for-OpenBMC/blob/main/certificate_generate.md#create-server-certificate-signed-by-given-ca-certificate)
-5) [Verify CA, client and server certificates generated are all valid.](https://github.com/venka66/TLS-server-certificates-for-OpenBMC/blob/main/certificate_generate.md#verify-certificates)
+5) [Verify the generated CA, client and server certificates are all valid.](https://github.com/venka66/TLS-server-certificates-for-OpenBMC/blob/main/certificate_generate.md#verify-certificates)
 
 ## Install CA and Server Certificates on OpenBMC
 Install CA certificate on OpenBMC via any one of the below interfaces
