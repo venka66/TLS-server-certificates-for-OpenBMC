@@ -1,0 +1,4 @@
+[ my_ext_section ]
+keyUsage = digitalSignature, keyAgreement
+extendedKeyUsage = serverAuth
+authorityKeyIdentifier = keyid
