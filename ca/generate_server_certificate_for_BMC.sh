@@ -1,4 +1,10 @@
 #!/bin/sh
+#
+# Author - Venkata Chandrappa (Venkata_Chandrappa@phoenix.com)
+#
+# Purpose - Generate BMC HTTPS certificate
+#
+#
 
 if  [ $# -lt 1 ]
         then
