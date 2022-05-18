@@ -124,6 +124,6 @@ always available without any authentication will always result with success,
 even when TLS is disabled or certificates are invalid.
 
 * Certificates do not meet the requirements. See paragraphs
-[Verify certificates](#Verify-certificates).
+[Verify certificates](https://github.com/venka66/TLS-server-certificates-for-OpenBMC/blob/main/certificate_generate.md#verify-certificates).
 
 * Attempting to load the same certificate twice will end up with an error.
